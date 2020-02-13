@@ -17,6 +17,17 @@ routes.push({
 
 const renderComponent = (location: any) => {
     // Hint location.hash will give you the current hash
+    var element = document.getElementById("root")
+    switch (location.hash) {
+        case "#/login":
+            element.innerHTML = `<pb-login></pb-login>`
+            break;
+        case "#/investements":
+            element.innerHTML = "<fixed-deposits></fixed-deposits>"
+
+        default:
+            break;
+    }
 
     // Remove Web Component (removeChild)
 
@@ -36,3 +47,6 @@ if (window.location.hash !== "#/") {
 }
 
 // Attach an event handler to the Root here for listening to Login_success event
+document.getElementById("root").addEventListener("Login_success", () => {
+    window.location.hash = "#/investements"
+})

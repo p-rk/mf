@@ -5,9 +5,16 @@
     </head>
     <body>
         <!--Load the Login script here-->
+        <script src="login.js" type="text/javascript"></script>
 
         <!--Load the custom element here-->
+        <pb-login></pb-login>
         <script>
+        document.querySelector('pb-login').addEventListener('loginevent', function(e) {
+            // document.body.appendChild(label);
+            alert('test')
+
+        });
             // Listen to the 'Login_Success' event here
         </script>
     </body>
